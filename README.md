@@ -24,7 +24,7 @@ Tested on Python 3.11.3 and PIP 23.1.2
 
 Locate to your workspace folder using -cd command then type: 
 ```
-git clone https://github.com/duchieu260503/Flood-detection.git
+git clone https://github.com/eseto2/Flood_Risk_Detection.git
 ```
 Libraries used:
 
