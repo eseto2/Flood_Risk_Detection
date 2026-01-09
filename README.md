@@ -1,5 +1,7 @@
-# Flood_Risk_Detection
-An AI model that detect real-time water area and water level for emergencies.
+# Flood Detection
+
+An AI model that detect real-time water area and water level for further purposes.
+
 ## Description
 
 In this project, I trained a YOLOv8n custom model on [this](https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset) dataset on Kaggle, as well as the ones I labeled myself using Roboflow's help, to make the model able to detect water in an image/video. The [model best.pt](https://github.com/duchieu260503/Flood-detection/blob/main/best.pt) is included in this repository.
@@ -50,13 +52,13 @@ A GUI interface will pop-up and assist you with the launch of the program.
 
 Once the GUI pop up, it will look like this:
 
-![GUI](https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG)
+![GUI](https://github.com/duchieu260503/Flood-detection/blob/main/media/GUI.JPG)
 
 Then type exactly like the GUI's suggestions on every entry, and select the video in the media folder.
 
 The result will look something like this:
 
-https://github.com/eseto2/Flood_Risk_Detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
+https://github.com/duchieu260503/Flood-detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
 
 And the result video will be saved in the Flood-detection folder.
 
@@ -70,7 +72,7 @@ This will be fixed and modified in future updates.
 
 ## Authors
 
-Eseoghene Ovuede
+Ovuede Eseoghene
 
 Email: eovuede97@gmail.com
 
@@ -78,4 +80,3 @@ Email: eovuede97@gmail.com
 ## License
 
 This project is free to use, re-use, or develop, as long as the YOLOv8 [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) is satisfied.
-
