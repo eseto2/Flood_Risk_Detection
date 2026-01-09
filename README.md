@@ -22,7 +22,7 @@ Typical application areas include:
 • Smart city systems
 
 =====================================================================
-2. ## TECHNICAL DESCRIPTION
+## 2. TECHNICAL DESCRIPTION
 
 This project uses a YOLOv8n custom segmentation model trained on a
 combination of datasets:
@@ -49,7 +49,7 @@ Technical overview diagram:
 https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.jpg
 
 =====================================================================
-3. ##WATER LEVEL ESTIMATION INPUTS
+## 3. WATER LEVEL ESTIMATION INPUTS
 
 To compute water level accurately, the following inputs are required:
 
@@ -64,13 +64,13 @@ Once configured, the system provides:
 • Automatic saving of the processed video locally
 
 =====================================================================
-4. ##GETTING STARTED
-4.1 ###SYSTEM REQUIREMENTS
+## 4. GETTING STARTED
+### 4.1 SYSTEM REQUIREMENTS
 
 • Python version: 3.11.3
 • PIP version: 23.1.2
 
-4.2 ###INSTALLATION
+### 4.2 INSTALLATION
 
 Clone the repository to your workspace directory:
 
@@ -95,7 +95,7 @@ cd Flood-detection
 pip install -r requirements.txt
 
 =====================================================================
-5. ##RUNNING THE PROGRAM
+## 5. RUNNING THE PROGRAM
 
 The program can be executed using a preferred IDE (VS Code, Jupyter
 Notebook, etc.) or directly from the command line:
@@ -106,7 +106,7 @@ A graphical user interface (GUI) will launch to guide the user through
 the configuration and execution process.
 
 =====================================================================
-6. ##GUI INTERFACE
+## 6. GUI INTERFACE
 
 Once launched, the GUI will appear as shown below:
 
@@ -118,7 +118,7 @@ Usage instructions:
 • Select a video file from the media folder
 
 =====================================================================
-7. ##OUTPUT EXAMPLE
+## 7. OUTPUT EXAMPLE
 
 Example output video demonstrating system performance:
 
@@ -128,7 +128,7 @@ The resulting processed video is automatically saved in the
 Flood-detection folder.
 
 =====================================================================
-8. ##FUTURE IMPROVEMENTS
+## 8. FUTURE IMPROVEMENTS
 
 The system is functional but still under active development.
 Current limitations include:
@@ -145,13 +145,13 @@ occur between the reference line and the segmentation mask
 These limitations will be addressed and improved in future updates.
 
 =====================================================================
-9. ##AUTHOR
+## 9. AUTHOR
 
 Name: Ovuede Eseoghene
 Email: eovuede97@gmail.com
 
 =====================================================================
-10. ##LICENSE
+## 10. LICENSE
 
 This project is free to use, modify, and extend, provided that the
 YOLOv8 license is respected:
