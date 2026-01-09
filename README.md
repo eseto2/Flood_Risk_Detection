@@ -1,82 +1,139 @@
-# Flood Detection
+Flood Detection System
 
-An AI model that detect real-time water area and water level for further purposes.
+An AI-powered system for real-time water surface detection and water level estimation, designed to support flood monitoring and early warning applications.
 
-## Description
+OVERVIEW
 
-In this project, I trained a YOLOv8n custom model on [this](https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset) dataset on Kaggle, as well as the ones I labeled myself using Roboflow's help, to make the model able to detect water in an image/video. The [model best.pt](https://github.com/eseto2/Flood_Risk_Detection/blob/main/best.pt) is included in this repository.
+This project focuses on detecting water regions and estimating water levels from video streams using a custom-trained deep learning model. The system combines computer vision, segmentation, and geometric analysis to produce real-time visual outputs and saved result videos.
 
-Once the model is ready, some additional information needs to be provided to measure the water level: The line's 2 tips coordinates that are perpendicular with the water surface. This is crucial to calculate the water level.
+It is suitable for applications such as:
 
-![Technical Approach](https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.jpg)
+Flood risk monitoring
 
-Additionally, the number of pixels in a real-life meter, the tip's real height, and the water level that may trigger a warning.
+Infrastructure safety analysis
 
-The result can be displayed while the program is running, as well as an output video is saved on the local machine.
+Environmental surveillance
 
-## Getting Started
+Smart city systems
 
-### Dependencies
+TECHNICAL DESCRIPTION
 
-Tested on Python 3.11.3 and PIP 23.1.2
+In this project, I trained a YOLOv8n custom segmentation model using a combination of:
 
-### Installing
+The Kaggle dataset:
+https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset
 
-Locate to your workspace folder using -cd command then type: 
-```
+Additional water annotations labeled manually with Roboflow
+
+The trained model (best.pt) is included directly in this repository:
+https://github.com/eseto2/Flood_Risk_Detection/blob/main/best.pt
+
+The model detects water regions in images or video frames. To accurately estimate water level, the system requires a reference line defined by two coordinates perpendicular to the water surface.
+
+This reference enables the system to calculate the vertical distance between the detected water surface and a known real-world measurement.
+
+Technical diagram:
+https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.jpg
+
+WATER LEVEL ESTIMATION INPUTS
+
+To compute water level accurately, the following information must be provided:
+
+Coordinates of the two endpoints of the reference line
+
+Pixel-to-meter conversion ratio
+
+Real-world height of the reference line
+
+Threshold water level for triggering a warning
+
+Once configured, the system:
+
+Displays detection results in real time
+
+Saves the processed output video locally
+
+GETTING STARTED
+
+REQUIREMENTS
+
+Tested on:
+
+Python 3.11.3
+
+PIP 23.1.2
+
+INSTALLATION
+
+Navigate to your workspace directory and clone the repository:
+
 git clone https://github.com/eseto2/Flood_Risk_Detection.git
-```
-Libraries used:
 
-- [Tkinter](https://docs.python.org/3/library/tkinter.html)
+Libraries used in this project:
 
-- [Ultralytics](https://ultralytics.com/) and its [requirements](https://github.com/ultralytics/ultralytics/blob/main/requirements.txt)
+Tkinter
+https://docs.python.org/3/library/tkinter.html
 
-- [Shapely](https://shapely.readthedocs.io/en/stable/index.html)
-  
-To install all the libraries needed, type:
-```
+Ultralytics and its requirements
+https://ultralytics.com/
+
+https://github.com/ultralytics/ultralytics/blob/main/requirements.txt
+
+Shapely
+https://shapely.readthedocs.io/en/stable/index.html
+
+Install all required dependencies:
+
 cd Flood-detection
 pip install -r requirements.txt
-```
 
-### Executing program
+RUNNING THE PROGRAM
 
-You can either run the program in your favourite code editor (VS Code, Jupyter Notebook, ...) or simply by command.
-```
+You can run the program using your preferred IDE (VS Code, Jupyter Notebook, etc.) or directly from the command line:
+
 python main.py
-```
-A GUI interface will pop-up and assist you with the launch of the program.
 
-### Run example
+A GUI interface will launch to guide you through the setup and execution process.
 
-Once the GUI pop up, it will look like this:
+GUI EXAMPLE
 
-![GUI](https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG)
+Once launched, the interface will appear as shown below:
 
-Then type exactly like the GUI's suggestions on every entry, and select the video in the media folder.
+https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG
 
-The result will look something like this:
+Follow the GUI instructions carefully:
+
+Enter the required parameters exactly as prompted
+
+Select a video file from the media folder
+
+OUTPUT EXAMPLE
+
+Example output video:
 
 https://github.com/eseto2/Flood_Risk_Detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
 
-And the result video will be saved in the Flood-detection folder.
+The resulting processed video will be saved automatically in the Flood-detection folder.
 
-## To be developed
+FUTURE IMPROVEMENTS
 
-The program is still imperfect, as the model only works best with single-area per image, which means the model can not detect 2-or-more water areas in a single frame.
+While functional, the system is still under development. Current limitations include:
 
-Also, the intersections-calculating algorithms will pose some troubles when 2 or more intersections were found between the line and the annotation mask, so the line coordinates should be chosen carefully.
+The model performs best when only one water region appears per frame
 
-This will be fixed and modified in future updates.
+Multiple water areas in a single image may reduce accuracy
 
-## Authors
+Intersection calculations may fail if multiple intersections occur between the reference line and the segmentation mask
+
+These issues will be addressed and improved in future updates.
+
+AUTHOR
 
 Ovuede Eseoghene
-
 Email: eovuede97@gmail.com
 
+LICENSE
 
-## License
+This project is free to use, modify, and extend, provided that the YOLOv8 license is respected:
 
-This project is free to use, re-use, or develop, as long as the YOLOv8 [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) is satisfied.
+https://github.com/ultralytics/ultralytics/blob/main/LICENSE
