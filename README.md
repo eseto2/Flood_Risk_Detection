@@ -1,4 +1,4 @@
-# Flood Detection
+# Flood Risk Detection
 
 An AI model that detect real-time water area and water level for further purposes.
 
