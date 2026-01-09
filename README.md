@@ -1,150 +1,83 @@
-# FLOOD DETECTION SYSTEM
+# Flood Detection
 
-An AI-powered system for real-time water surface detection and water
-level estimation, designed to support flood monitoring and early
-warning applications.
+An AI model that detect real-time water area and water level for further purposes.
 
-=====================================================================
+## Description
 
-## OVERVIEW
-=====================================================================
+In this project, I trained a YOLOv8n custom model on [this](https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset) dataset on Kaggle, as well as the ones I labeled myself using Roboflow's help, to make the model able to detect water in an image/video. The [model best.pt](https://github.com/eseto2/Flood_Risk_Detection/blob/main/best.pt) is included in this repository.
 
-This project focuses on detecting water regions and estimating water
-levels from video streams using a custom-trained deep learning model.
-The system combines computer vision, segmentation, and geometric
-analysis to produce real-time visual outputs and saved result videos.
+Once the model is ready, some additional information needs to be provided to measure the water level: The line's 2 tips coordinates that are perpendicular with the water surface. This is crucial to calculate the water level.
 
-Typical application areas include:
+![Technical Approach](https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.jpg)
 
-• Flood risk monitoring
-• Infrastructure safety analysis
-• Environmental surveillance
-• Smart city systems
 
-=====================================================================
-## 2. TECHNICAL DESCRIPTION
+Additionally, the number of pixels in a real-life meter, the tip's real height, and the water level that may trigger a warning.
 
-This project uses a YOLOv8n custom segmentation model trained on a
-combination of datasets:
+The result can be displayed while the program is running, as well as an output video is saved on the local machine.
 
-• Kaggle Water Segmentation Dataset: https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset
+## Getting Started
 
-• Additional water annotations manually labeled using Roboflow
+### Dependencies
 
-The trained model file (best.pt) is included in this repository: https://github.com/eseto2/Flood_Risk_Detection/blob/main/best.pt
+Tested on Python 3.11.3 and PIP 23.1.2
 
-The model performs water region detection on images and video frames.
-To estimate water level, the system relies on a reference line defined
-by two coordinates perpendicular to the water surface.
+### Installing
 
-This reference line enables accurate calculation of the vertical
-distance between the detected water surface and a known real-world
-measurement.
-
-Technical overview diagram: https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.jpg
-
-=====================================================================
-## 3. WATER LEVEL ESTIMATION INPUTS
-
-To compute water level accurately, the following inputs are required:
-
-• Coordinates of the two endpoints of the reference line
-• Pixel-to-meter conversion ratio
-• Real-world height of the reference line
-• Water level threshold for warning activation
-
-Once configured, the system provides:
-
-• Real-time visual detection output
-• Automatic saving of the processed video locally
-
-=====================================================================
-## 4. GETTING STARTED
-### 4.1 SYSTEM REQUIREMENTS
-
-• Python version: 3.11.3
-• PIP version: 23.1.2
-
-### 4.2 INSTALLATION
-
-Clone the repository to your workspace directory:
-
+Locate to your workspace folder using -cd command then type: 
+```
 git clone https://github.com/eseto2/Flood_Risk_Detection.git
+```
+Libraries used:
 
-Libraries used in this project:
+- [Tkinter](https://docs.python.org/3/library/tkinter.html)
 
-• Tkinter
-https://docs.python.org/3/library/tkinter.html
+- [Ultralytics](https://ultralytics.com/) and its [requirements](https://github.com/ultralytics/ultralytics/blob/main/requirements.txt)
 
-• Ultralytics and required dependencies
-https://ultralytics.com/
-
-https://github.com/ultralytics/ultralytics/blob/main/requirements.txt
-
-• Shapely
-https://shapely.readthedocs.io/en/stable/index.html
-
-Install all required dependencies:
-
+- [Shapely](https://shapely.readthedocs.io/en/stable/index.html)
+  
+To install all the libraries needed, type:
+```
 cd Flood-detection
 pip install -r requirements.txt
+```
 
-=====================================================================
-## 5. RUNNING THE PROGRAM
+### Executing program
 
-The program can be executed using a preferred IDE (VS Code, Jupyter
-Notebook, etc.) or directly from the command line:
-
+You can either run the program in your favourite code editor (VS Code, Jupyter Notebook, ...) or simply by command.
+```
 python main.py
+```
+A GUI interface will pop-up and assist you with the launch of the program.
 
-A graphical user interface (GUI) will launch to guide the user through
-the configuration and execution process.
+### Run example
 
-=====================================================================
-## 6. GUI INTERFACE
+Once the GUI pop up, it will look like this:
 
-Once launched, the GUI will appear as shown below: https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG
+![GUI](https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG)
 
-Usage instructions:
+Then type exactly like the GUI's suggestions on every entry, and select the video in the media folder.
 
-• Enter all parameters exactly as indicated in the interface
-• Select a video file from the media folder
+The result will look something like this:
 
-=====================================================================
-## 7. OUTPUT EXAMPLE
+https://github.com/eseto2/Flood_Risk_Detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
 
-Example output video demonstrating system performance: https://github.com/eseto2/Flood_Risk_Detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
+And the result video will be saved in the Flood-detection folder.
 
-The resulting processed video is automatically saved in the
-Flood-detection folder.
+## To be developed
 
-=====================================================================
-## 8. FUTURE IMPROVEMENTS
+The program is still imperfect, as the model only works best with single-area per image, which means the model can not detect 2-or-more water areas in a single frame.
 
-The system is functional but still under active development.
-Current limitations include:
+Also, the intersections-calculating algorithms will pose some troubles when 2 or more intersections were found between the line and the annotation mask, so the line coordinates should be chosen carefully.
 
-• Optimal performance is achieved when only one water region
-appears per frame
+This will be fixed and modified in future updates.
 
-• Detection accuracy may decrease when multiple water areas are
-present in a single image
+## Authors
 
-• Intersection calculations may fail if multiple intersections
-occur between the reference line and the segmentation mask
+Ovuede Eseoghene
 
-These limitations will be addressed and improved in future updates.
-
-=====================================================================
-## 9. AUTHOR
-
-Name: Ovuede Eseoghene
 Email: eovuede97@gmail.com
 
-=====================================================================
-## 10. LICENSE
 
-This project is free to use, modify, and extend, provided that the
-YOLOv8 license is respected:
+## License
 
-https://github.com/ultralytics/ultralytics/blob/main/LICENSE
+This project is free to use, re-use, or develop, as long as the YOLOv8 [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) is satisfied.
