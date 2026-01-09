@@ -1,5 +1,4 @@
-=====================================================================
-#FLOOD DETECTION SYSTEM
+# FLOOD DETECTION SYSTEM
 
 An AI-powered system for real-time water surface detection and water
 level estimation, designed to support flood monitoring and early
@@ -7,7 +6,7 @@ warning applications.
 
 =====================================================================
 
-##OVERVIEW
+## OVERVIEW
 =====================================================================
 
 This project focuses on detecting water regions and estimating water
@@ -23,7 +22,7 @@ Typical application areas include:
 • Smart city systems
 
 =====================================================================
-2. ##TECHNICAL DESCRIPTION
+2. ## TECHNICAL DESCRIPTION
 
 This project uses a YOLOv8n custom segmentation model trained on a
 combination of datasets:
