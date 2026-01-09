@@ -4,11 +4,11 @@ An AI model that detect real-time water area and water level for further purpose
 
 ## Description
 
-In this project, I trained a YOLOv8n custom model on [this](https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset) dataset on Kaggle, as well as the ones I labeled myself using Roboflow's help, to make the model able to detect water in an image/video. The [model best.pt](https://github.com/duchieu260503/Flood-detection/blob/main/best.pt) is included in this repository.
+In this project, I trained a YOLOv8n custom model on [this](https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset) dataset on Kaggle, as well as the ones I labeled myself using Roboflow's help, to make the model able to detect water in an image/video. The [model best.pt](https://github.com/eseto2/Flood_Risk_Detection/blob/main/best.pt) is included in this repository.
 
 Once the model is ready, some additional information needs to be provided to measure the water level: The line's 2 tips coordinates that are perpendicular with the water surface. This is crucial to calculate the water level.
 
-![Technical Approach](https://github.com/duchieu260503/Flood-detection/blob/main/media/Front_Page.JPG)
+![Technical Approach](https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.JPG)
 
 Additionally, the number of pixels in a real-life meter, the tip's real height, and the water level that may trigger a warning.
 
@@ -52,13 +52,13 @@ A GUI interface will pop-up and assist you with the launch of the program.
 
 Once the GUI pop up, it will look like this:
 
-![GUI](https://github.com/duchieu260503/Flood-detection/blob/main/media/GUI.JPG)
+![GUI](https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG)
 
 Then type exactly like the GUI's suggestions on every entry, and select the video in the media folder.
 
 The result will look something like this:
 
-https://github.com/duchieu260503/Flood-detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
+https://github.com/eseto2/Flood_Risk_Detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
 
 And the result video will be saved in the Flood-detection folder.
 
