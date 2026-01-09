@@ -27,14 +27,11 @@ Typical application areas include:
 This project uses a YOLOv8n custom segmentation model trained on a
 combination of datasets:
 
-• Kaggle Water Segmentation Dataset:
-https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset
+• Kaggle Water Segmentation Dataset: https://www.kaggle.com/datasets/gvclsu/water-segmentation-dataset
 
 • Additional water annotations manually labeled using Roboflow
 
-The trained model file (best.pt) is included in this repository:
-
-https://github.com/eseto2/Flood_Risk_Detection/blob/main/best.pt
+The trained model file (best.pt) is included in this repository: https://github.com/eseto2/Flood_Risk_Detection/blob/main/best.pt
 
 The model performs water region detection on images and video frames.
 To estimate water level, the system relies on a reference line defined
@@ -44,9 +41,7 @@ This reference line enables accurate calculation of the vertical
 distance between the detected water surface and a known real-world
 measurement.
 
-Technical overview diagram:
-
-https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.jpg
+Technical overview diagram: https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/Front_Page.jpg
 
 =====================================================================
 ## 3. WATER LEVEL ESTIMATION INPUTS
@@ -108,9 +103,7 @@ the configuration and execution process.
 =====================================================================
 ## 6. GUI INTERFACE
 
-Once launched, the GUI will appear as shown below:
-
-https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG
+Once launched, the GUI will appear as shown below: https://github.com/eseto2/Flood_Risk_Detection/blob/main/media/GUI.JPG
 
 Usage instructions:
 
@@ -120,9 +113,7 @@ Usage instructions:
 =====================================================================
 ## 7. OUTPUT EXAMPLE
 
-Example output video demonstrating system performance:
-
-https://github.com/eseto2/Flood_Risk_Detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
+Example output video demonstrating system performance: https://github.com/eseto2/Flood_Risk_Detection/assets/16372230/defb4c22-a549-40b6-82e3-be5eebe6fad6
 
 The resulting processed video is automatically saved in the
 Flood-detection folder.
